@@ -3,10 +3,10 @@ import networkx as nx # networkx: para construir y dibujar gráficos de manera f
 
 # ======= Clases =======
 class Edge:
-    def __init__(self, u, v, weight): # Crea una arista entre dos nudos uy vcon un peso weight.
+    def __init__(self, u, v, weight): # Crea una arista entre dos nodos con un peso weight.
         self.u = u
         self.v = v
-        self.weight = weight # Una arista une dos nodos uy vcon un peso(coste o beneficio).
+        self.weight = weight # Una arista une dos nodos con un peso(coste o beneficio).
 
     def __repr__(self):
         return f"({self.u}, {self.v}) peso: {self.weight}" # Este método sirve para imprimir el arista de forma clara.
@@ -54,9 +54,9 @@ def kruskal(n, edges, modo="minimo"):
         if ds.union(edge.u, edge.v):
             mst.append(edge)
             total += edge.weight
-            print(f"  ✅ Añadido: {edge}") # Si la arista no forma un ciclo, se añade al árbol y se suma su peso.
+            print(f" Añadido: {edge}") # Si la arista no forma un ciclo, se añade al árbol y se suma su peso.
         else:
-            print(f"  ❌ Descartado (ciclo): {edge}") # Si forma un ciclo, se descarta.
+            print(f" Descartado (ciclo): {edge}") # Si forma un ciclo, se descarta.
     # Recorre cada artista ordenada:
     # Si no forma ciclo, la añade al MST.
     # Si forma ciclo, se descarta.
